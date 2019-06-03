@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.Arrays;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -10,7 +12,8 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with evens removed
      */
     public Integer[] deleteEvens(Integer[] ints) {
-        return null;
+
+        return deleteMultiplesOfN(ints, 2);
     }
 
     /**
@@ -19,7 +22,14 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with odds removed
      */
     public Integer[] deleteOdds(Integer[] ints) {
-        return null;
+        Integer[] intArray = new Integer[ints.length];
+        int index = 0;
+        for (int num : ints) {
+            if (num % 2 == 0) {
+                intArray[index] = num;
+                index++;
+            }
+        } return Arrays.copyOf(intArray, index);
     }
 
     /**
@@ -28,7 +38,8 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by 3 removed
      */
     public Integer[] deleteMultiplesOf3(Integer[] ints) {
-        return null;
+
+        return deleteMultiplesOfN(ints, 3);
     }
 
     /**
@@ -38,6 +49,13 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        return null;
+        Integer[] intArray = new Integer[ints.length];
+        int index = 0;
+        for (int num : ints) {
+            if (!(num % multiple == 0)) {
+                intArray[index] = num;
+                index++;
+            }
+        } return Arrays.copyOf(intArray, index);
     }
 }
