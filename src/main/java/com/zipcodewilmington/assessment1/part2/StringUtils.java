@@ -2,6 +2,8 @@ package com.zipcodewilmington.assessment1.part2;
 
 import com.zipcodewilmington.assessment1.part1.BasicStringUtils;
 
+import static com.zipcodewilmington.assessment1.part1.BasicStringUtils.*;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -35,7 +37,7 @@ public class StringUtils {
      */
     public static String reverseFirstWord(String sentence) {
         String[] words = getWords(sentence);
-        return BasicStringUtils.reverse(words[0]);
+        return reverse(words[0]);
     }
 
     /**
@@ -45,7 +47,7 @@ public class StringUtils {
      */
     public static String reverseFirstWordThenCamelCase(String sentence) {
         String[] words = getWords(sentence);
-        return BasicStringUtils.reverseThenCamelCase(sentence);
+        return reverseThenCamelCase(words[0]);
     }
 
 
@@ -57,8 +59,7 @@ public class StringUtils {
      */
     public static String removeCharacterAtIndex(String str, int index) {
 
-//        return str.substring();
-        return null;
+        return str.substring(0, index) + str.substring(index+1);
     }
 
 }

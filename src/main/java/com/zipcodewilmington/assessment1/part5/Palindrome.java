@@ -1,15 +1,19 @@
 package com.zipcodewilmington.assessment1.part5;
 
 import com.zipcodewilmington.assessment1.part1.BasicStringUtils;
+import java.util.Set;
 
 public class Palindrome {
 
-    public Integer countPalindromes(String input){
+    public Integer countPalindromes(String input) {
         int count = 0;
-        String[] strArr = input.split(" ");
-        for (String word : strArr) {
-            if (isPalindromic(word) == true) {
-                count++;
+        String subStr = "";
+        for (int i = 0; i < input.length(); i++) {
+            for (int j = i + 1; j <= input.length(); j++) {
+                subStr = input.substring(i, j);
+                if (subStr.equalsIgnoreCase(BasicStringUtils.reverse(subStr))) {
+                    count++;
+                }
             }
         } return count;
     }
@@ -20,3 +24,4 @@ public class Palindrome {
         } return false;
     }
 }
+
