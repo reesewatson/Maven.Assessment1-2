@@ -10,10 +10,9 @@ import java.util.List;
  */
 public class PetOwner {
 
-//    private List<Pet> pets = new ArrayList<>();
-    private final com.zipcodewilmington.assessment1.part3.Pet[] Pet;
+    private List<Pet> pets = new ArrayList<>();
     private String name;
-    Pet[] pets = new Pet[2];
+    private Pet pet;
 
 
     /**
@@ -22,7 +21,6 @@ public class PetOwner {
      */
     public PetOwner(String name, Pet... pets) {
         this.name = "Pet owner name";
-        this.Pet = pets;
 
     }
 
@@ -30,7 +28,7 @@ public class PetOwner {
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
-        for (int i = 0; i < )
+       pets.add(pet);
     }
 
     /**
@@ -46,8 +44,9 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
-
-        return null;
+        if (pets.contains(pet)) {
+            return true;
+        } return false;
     }
 
     /**
@@ -96,7 +95,6 @@ public class PetOwner {
      * @return array representation of animals owned by this PetOwner
      */
     public Pet[] getPets() {
-//        Pet[] pets = new Pet[5];
         return null;
     }
 }

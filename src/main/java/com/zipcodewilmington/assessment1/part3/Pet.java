@@ -1,13 +1,18 @@
 package com.zipcodewilmington.assessment1.part3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by leon on 2/16/18.
  */
 public abstract class Pet implements Animal {
 
+    private List<Pet> pets = new ArrayList<>();
     private String name;
     private int age;
     private PetOwner owner;
+    private Object Pet;
 
     /**
      * nullary constructor
@@ -22,6 +27,7 @@ public abstract class Pet implements Animal {
      * @param name name of this pet
      */
     public Pet(String name) {
+
         this.name = name;
     }
 
@@ -30,6 +36,7 @@ public abstract class Pet implements Animal {
      * @param age age of this pet
      */
     public Pet(int age) {
+
         this.age = age;
     }
 
@@ -63,8 +70,8 @@ public abstract class Pet implements Animal {
      * ensure this instance of `Pet` is added to the owner's composite `pets` list
      */
     public void setOwner(PetOwner newPetOwner) {
-        PetOwner owner = new PetOwner(name);
-        this.owner = owner;
+        PetOwner owner = new PetOwner(name, (com.zipcodewilmington.assessment1.part3.Pet) Pet);
+        this.owner = newPetOwner;
     }
 
     /**
@@ -72,6 +79,6 @@ public abstract class Pet implements Animal {
      */
     public PetOwner getOwner() {
 
-        return owner;
+        return this.owner;
     }
 }
